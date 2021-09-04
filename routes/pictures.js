@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Picture = require("../models/Picture.js");
 
-/* GET home page */
 router.get("/china", (req, res, next) => {
   Picture.find({ category: "china" })
     .then((dbResponse) => {
