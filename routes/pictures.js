@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Picture = require("../models/Picture.js");
-const uploader = require("../config/cloudinary.js");
 
 /* GET home page */
 router.get("/china", (req, res, next) => {
@@ -44,11 +43,7 @@ router.get("/random", (req, res, next) => {
     });
 });
 
-router.post("/", uploader.single("images"), function (req, res, next) {
-  console.log(req.body);
-  if (req.files) {
-    req.body.images = req.files.path;
-  }
+router.post("/", function (req, res, next) {
   Picture.create(req.body)
     .then((dbResponse) => {
       res.status(201).json(dbResponse);
