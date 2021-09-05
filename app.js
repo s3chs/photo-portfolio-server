@@ -3,10 +3,10 @@ require("dotenv").config();
 // DATABASE CONNECTION
 require("./config/mongodb");
 
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
