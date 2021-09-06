@@ -6,7 +6,6 @@ const Picture = require("../models/Picture.js");
 router.get("/:id", (req, res, next) => {
   Picture.find({ category: req.params.id })
     .then((dbResponse) => {
-      console.log(dbResponse);
       res.status(200).json(dbResponse);
     })
     .catch((dbErr) => {
